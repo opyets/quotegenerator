@@ -60,7 +60,7 @@ function getRandomQuote() {
   newQuoteBtn.disabled = true;
   newQuoteBtn.textContent = "Loading...";
   
-  let apiUrl = "https://api.quotable.io/random";
+  let apiUrl = `https://corsproxy.io/?url=http://api.quotable.io/random`;
   if (currentCategory) {
     apiUrl += `?tags=${currentCategory}`;
   }
