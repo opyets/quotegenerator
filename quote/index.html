@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Quote Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add FontAwesome for home icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <div id="categories-view" class="view active">
+      <h1 class="main-title">Quote Generator</h1>
+      <div class="categories-grid">
+        <div class="category-card active" data-category="inspirational" onclick="selectCategory(this, 'inspirational')">
+          <div class="emoji">💡</div>
+          <span>Inspirational</span>
+        </div>
+        <div class="category-card" data-category="love" onclick="selectCategory(this, 'love')">
+          <div class="emoji">💕</div>
+          <span>Love</span>
+        </div>
+        <div class="category-card" data-category="humorous" onclick="selectCategory(this, 'humorous')">
+          <div class="emoji">😂</div>
+          <span>Humor</span>
+        </div>
+        <div class="category-card" data-category="happiness" onclick="selectCategory(this, 'happiness')">
+          <div class="emoji">😊</div>
+          <span>Happiness</span>
+        </div>
+        <div class="category-card" data-category="" onclick="selectCategory(this, '')">
+          <div class="emoji">🎰</div>
+          <span>Random</span>
+        </div>
+      </div>
+      <button id="generate-btn" class="generate-button" onclick="showQuoteView()">
+        Generate Quote
+      </button>
+    </div>
+    
+    <div id="quote-view" class="view">
+      <div class="quote-container">
+        <div class="quote-area">
+          <p class="quote">Loading your quote...</p>
+        </div>
+        <div class="author">
+          <span class="name"></span>
+        </div>
+      </div>
+      <div class="quote-actions">
+        <button id="back-btn" class="back-button" onclick="showCategoriesView()">
+          <i class="fas fa-home"></i>
+        </button>
+        <button id="new-quote-btn" class="quote-button" onclick="getNewQuote()">
+          New Quote
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
